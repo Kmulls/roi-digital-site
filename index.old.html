@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>if(/^(www\.)?agenticconsulting\.com$/.test(location.hostname))location.replace('/practices/')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roi Digital Consulting | The Business Brain in a Box</title>
+<meta name="description" content="You know you need to AI-ify your business. We make it easy. Every call answered, every job booked, done in 90 days.">
+<meta property="og:title" content="The Business Brain in a Box | Roi Digital Consulting">
+<meta property="og:description" content="Every call gets answered. Every job gets booked. Get your free Speed Test.">
+<meta property="og:url" content="https://agenticconsulting.com/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://agenticconsulting.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F8F6;color:#1B2A3A;font-family:'Archivo',system-ui,sans-serif}
+a{color:#C2410C} a:hover{color:#9A3412}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;color:#FFFFFF;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{color:#FFFFFF;filter:brightness(.9)}
+.ghost{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;color:#1B2A3A;border:2px solid #1B2A3A;background:transparent;cursor:pointer;font-family:inherit}
+.ghost:hover{color:#1B2A3A;background:#EDEFEB}
+.wb{position:relative;aspect-ratio:16/9;container-type:inline-size;background:#FFFFFF;border:1px solid #D4D9D3;border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(27,42,58,.10)}
+.wb.on{border-radius:14px 14px 0 0;box-shadow:none}
+.hd{position:absolute;box-sizing:border-box;border:max(2px,.32cqw) solid #1B2A3A;border-radius:255px 15px 225px 15px/15px 225px 15px 255px;background:#FFFFFF}
+.mk{font-family:'Caveat',cursive;font-weight:700;line-height:1.05}
+.ab{position:absolute}
+.d{opacity:0;animation:pop .6s ease-out forwards}
+.play{width:max(56px,8cqw);height:max(56px,8cqw);border-radius:50%;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(27,42,58,.25);animation:nudge 2.4s ease-in-out infinite, ping 2.4s ease-out infinite}
+.play:hover{animation-play-state:paused;transform:scale(1.08)}
+.play:focus-visible{outline:3px solid #0E5A3A;outline-offset:4px}
+@keyframes nudge{0%,100%{transform:scale(1)} 12%{transform:scale(1.1)} 24%{transform:scale(.97)} 36%{transform:scale(1.04)} 48%{transform:scale(1)} }
+@keyframes ping{0%{box-shadow:0 6px 16px rgba(27,42,58,.25),0 0 0 0 rgba(14,90,58,.55)} 60%{box-shadow:0 6px 16px rgba(27,42,58,.25),0 0 0 max(18px,2.6cqw) rgba(14,90,58,0)} 100%{box-shadow:0 6px 16px rgba(27,42,58,.25),0 0 0 0 rgba(14,90,58,0)} }
+.play svg{width:42%;height:42%;margin-left:6%}
+.water{position:absolute;left:0;right:0;bottom:0;height:82%;background:#CFE3F5;animation:drain 42s linear 10s forwards}
+.hole{position:absolute;width:2.2cqw;height:2.2cqw;border-radius:50%;background:#1B2A3A;opacity:0;animation:pop .4s ease-out forwards}
+.drip{position:absolute;width:1.1cqw;height:1.5cqw;background:#3B82F6;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;opacity:0;animation:drip 1.6s ease-in infinite}
+.ln{fill:none;stroke:#1B2A3A;stroke-width:2.5;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.1s ease-out forwards}
+.caps{position:relative;min-height:88px;background:#1B2A3A;color:#FFFFFF}
+.cap{position:absolute;inset:0;display:flex;align-items:center;padding:12px 22px;font-size:17px;line-height:1.4;opacity:0;animation:cap 10s linear both}
+.cap.last{animation-name:capin}
+.bar{height:5px;background:#E2E5E0;border-radius:0 0 14px 14px;overflow:hidden}
+.prog{height:100%;width:0;animation:prog 60s linear forwards}
+.card{background:#FFFFFF;border:1px solid #D4D9D3;border-radius:14px;padding:24px;box-sizing:border-box}
+.ico{width:30px;height:30px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.field{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.field input{min-height:48px;border-radius:10px;border:1px solid #9AA3AE;padding:0 14px;font-size:16px;font-family:inherit;background:#FFFFFF;color:#1B2A3A}
+.ptable{width:100%;border-collapse:collapse;font-size:16px;min-width:620px}
+.ptable th{text-align:left;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#4B5563;padding:14px 16px;border-bottom:2px solid #1B2A3A}
+.ptable td{padding:16px;border-bottom:1px solid #D4D9D3;vertical-align:top}
+@keyframes pop{0%{opacity:0;transform:scale(.9)} 100%{opacity:1;transform:none} }
+@keyframes fadeout{to{opacity:0} }
+@keyframes drain{from{height:82%} to{height:16%} }
+@keyframes drip{0%{opacity:0;transform:translateY(0)} 20%{opacity:1} 100%{opacity:0;transform:translateY(5cqw)} }
+@keyframes draw{to{stroke-dashoffset:0} }
+@keyframes cap{0%{opacity:0} 4%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+@keyframes capin{0%{opacity:0} 4%{opacity:1} 100%{opacity:1} }
+@keyframes prog{from{width:0} to{width:100%} }
+@media (prefers-reduced-motion: reduce){ .play{animation:none} .d,.hole{animation-duration:.01s !important} .ln{animation-duration:.01s !important} .drip{animation:none;opacity:0} .water{animation:none;height:30%} }
+</style>
+<style>html{scroll-behavior:smooth} [hidden]{display:none !important} input:focus-visible,a:focus-visible,.btn:focus-visible,.ghost:focus-visible{outline:3px solid #0E5A3A;outline-offset:3px}</style>
+</head>
+<body>
+<div style="min-height: 100vh">
+
+<header style="position: relative; border-bottom: 1px solid #D4D9D3; background: #FFFFFF">
+<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 16px; padding-bottom: 16px">
+<div style="display: flex; align-items: baseline; gap: 10px">
+<span style="font-weight: 800; font-size: 20px; letter-spacing: -0.01em">Roi Digital <span style="color: #0E5A3A">Consulting</span></span>
+<span class="mk" style="font-size: 20px; color: #4B5563">Where your ROI comes first</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+<a href="tel:+15182567205" style="font-weight: 700; font-size: 16px; color: #1B2A3A; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">Call Kevin: 518-256-7205</a>
+<a class="btn" href="#speed-test" style="background: #C2410C">Get my free Speed Test</a>
+</div>
+</div>
+</header>
+
+<section style="padding: 72px 0 80px">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<p class="mk" style="margin: 0; font-size: 30px; color: #C2410C">The Business Brain in a Box</p>
+<h1 style="margin: 0; font-size: clamp(38px, 5.6vw, 64px); line-height: 1.04; font-weight: 800; letter-spacing: -0.025em">You know you need to AI-ify your business.<br><span style="color: #C2410C">We make it easy.</span></h1>
+<p style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.3">Every call gets answered.<br><span style="color: #0E5A3A">Every job gets booked.</span></p>
+<p style="margin: 0; font-size: 19px; line-height: 1.55; max-width: 34em">We build your business a brain, then the operating system that runs on it. It's designed to take 80% of the day-to-day chaos off your plate, and it's done in 90 days.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a class="btn" href="#speed-test" style="background: #C2410C">Get my free Speed Test</a>
+<a class="ghost" href="#how-it-works">How it works</a>
+</div>
+</div>
+
+<div style="flex: 1 1 520px; min-width: 0">
+<div data-idle="leaks">
+<div class="wb" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.2cqw">
+<div class="mk" style="font-size: 6.4cqw; text-align: center">Where your money leaks</div>
+<svg viewBox="0 0 200 12" style="width: 46%; height: 2cqw" aria-hidden="true"><path d="M4 8 C 50 2, 120 12, 196 5" fill="none" stroke="#C2410C" stroke-width="4" stroke-linecap="round"></path></svg>
+<button class="play" style="background: #C2410C" data-play-btn="leaks" aria-label="Play the video: Where your money leaks"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z" fill="#FFFFFF"></path></svg></button>
+<div style="font-size: max(13px, 1.7cqw); color: #4B5563">Press play · under a minute, narrated by Kevin</div>
+</div>
+</div>
+<div data-slot="leaks"></div><template data-play="leaks">
+<div>
+<div class="wb on" role="img" aria-label="Animated whiteboard: a bucket labeled Your revenue leaks through six holes: missed calls, slow replies, unchased quotes, forgotten customers, no reviews and slow invoices.">
+<div class="ab mk d" style="left: 30%; top: 2%; width: 40%; text-align: center; font-size: 2.3cqw; color: #4B5563; animation-delay: 0.91s">trucks · signs · Google · referrals<br>↓</div>
+<div class="hd d" style="left: 36%; top: 14%; width: 28%; height: 62%; overflow: hidden; animation-delay: 0.0s">
+<div class="water" style="animation-delay: 6.04s; animation-duration: 29.97s"></div>
+<div class="mk" style="position: relative; text-align: center; margin-top: 2cqw; font-size: 3.4cqw">Your revenue</div>
+</div>
+
+<div class="hole" style="left: calc(36% - 1.1cqw); top: 26%; animation-delay: 6.04s"></div>
+<div class="drip" style="left: calc(36% - 3.6cqw); top: 27%; animation-delay: 6.36s"></div>
+<div class="ab d" style="left: 2%; top: 22%; width: 28%; text-align: right; animation-delay: 6.23s"><div class="mk" style="font-size: 3cqw; color: #C2410C">Missed calls</div><div style="font-size: 1.6cqw">most go unanswered</div></div>
+
+<div class="hole" style="left: calc(64% - 1.1cqw); top: 26%; animation-delay: 12.5s"></div>
+<div class="drip" style="left: calc(64% + 2.4cqw); top: 27%; animation-delay: 12.9s"></div>
+<div class="ab d" style="left: 70%; top: 22%; width: 28%; animation-delay: 12.74s"><div class="mk" style="font-size: 3cqw; color: #C2410C">Slow replies</div><div style="font-size: 1.6cqw">42-hour average</div></div>
+
+<div class="hole" style="left: calc(36% - 1.1cqw); top: 44%; animation-delay: 20.42s"></div>
+<div class="drip" style="left: calc(36% - 3.6cqw); top: 45%; animation-delay: 20.67s"></div>
+<div class="ab d" style="left: 2%; top: 40%; width: 28%; text-align: right; animation-delay: 20.57s"><div class="mk" style="font-size: 3cqw; color: #C2410C">Unchased quotes</div><div style="font-size: 1.6cqw">nobody follows up</div></div>
+
+<div class="hole" style="left: calc(64% - 1.1cqw); top: 44%; animation-delay: 22.42s"></div>
+<div class="drip" style="left: calc(64% + 2.4cqw); top: 45%; animation-delay: 22.67s"></div>
+<div class="ab d" style="left: 70%; top: 40%; width: 28%; animation-delay: 22.57s"><div class="mk" style="font-size: 3cqw; color: #C2410C">Forgotten customers</div><div style="font-size: 1.6cqw">years of them, untouched</div></div>
+
+<div class="hole" style="left: calc(36% - 1.1cqw); top: 62%; animation-delay: 25.42s"></div>
+<div class="drip" style="left: calc(36% - 3.6cqw); top: 63%; animation-delay: 25.79s"></div>
+<div class="ab d" style="left: 2%; top: 58%; width: 28%; text-align: right; animation-delay: 25.64s"><div class="mk" style="font-size: 3cqw; color: #C2410C">No reviews</div><div style="font-size: 1.6cqw">nobody asks</div></div>
+
+<div class="hole" style="left: calc(64% - 1.1cqw); top: 62%; animation-delay: 28.38s"></div>
+<div class="drip" style="left: calc(64% + 2.4cqw); top: 63%; animation-delay: 28.75s"></div>
+<div class="ab d" style="left: 70%; top: 58%; width: 28%; animation-delay: 28.61s"><div class="mk" style="font-size: 3cqw; color: #C2410C">Slow invoices</div><div style="font-size: 1.6cqw">chased by hand</div></div>
+
+<div class="ab" style="left: 50%; top: 81%; transform: translateX(-50%) rotate(-2deg)">
+<div class="d mk" style="border: max(2px, .35cqw) solid #C2410C; color: #C2410C; border-radius: 1cqw; padding: .6cqw 2cqw; font-size: 3.6cqw; white-space: nowrap; animation-delay: 32.83s">Plug the leaks → free Speed Test</div>
+</div>
+</div>
+<div class="caps" aria-live="polite">
+<div class="cap" style="animation-delay: 0.0s; animation-duration: 6.04s">You pay real money to make the phone ring: trucks, signs, Google, referrals.</div>
+<div class="cap" style="animation-delay: 6.04s; animation-duration: 6.46s">Then the leaks start. Most calls go unanswered while you're on a job.</div>
+<div class="cap" style="animation-delay: 12.5s; animation-duration: 7.92s">Web leads wait almost two days for a reply. The first company to answer wins about 78% of the time.</div>
+<div class="cap" style="animation-delay: 20.42s; animation-duration: 5.0s">Estimates go out and nobody follows up. Past customers never hear from you again.</div>
+<div class="cap" style="animation-delay: 25.42s; animation-duration: 7.41s">Happy customers are never even asked for reviews. Invoices sit while you chase them by hand.</div>
+<div class="cap last" style="animation-delay: 32.83s; animation-duration: 15.88s">We find every leak in your business and plug it. It all starts with a free Speed Test. It doesn't cost anything, and the leaks could be costing you tens of thousands.</div>
+</div>
+<div class="bar"><div class="prog" style="background: #C2410C; animation-duration: 48.71s"></div></div>
+<div style="display: flex; gap: 10px; margin-top: 12px">
+<button class="ghost" data-play-btn="leaks">Replay</button>
+<button class="ghost" data-close>Close</button>
+<button class="ghost" data-sound aria-pressed="true">Sound: on</button>
+</div>
+</div>
+</template>
+</div>
+</div>
+</section>
+
+<section style="padding: 80px 0; background: #FFFFFF; border-top: 1px solid #D4D9D3; border-bottom: 1px solid #D4D9D3">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<p class="mk" style="margin: 0; font-size: 26px; color: #C2410C">The problem</p>
+<h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">You don't have a lead problem.<br><span style="color: #0E5A3A">You have a leak problem.</span></h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.55">You already pay for the leads. Lost revenue never shows up on your P&amp;L, so most owners never see these six leaks.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<div class="card" style="display: flex; flex-direction: column; gap: 10px">
+<svg class="ico" viewBox="0 0 24 24" style="stroke: #C2410C" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path><path d="M3 3l18 18"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 800">The call you missed on the job site</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">By one industry estimate, 62% of calls to small businesses go unanswered during business hours. A customer or client with no heat calls the next company on Google.</p>
+</div>
+<div class="card" style="display: flex; flex-direction: column; gap: 10px">
+<svg class="ico" viewBox="0 0 24 24" style="stroke: #C2410C" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 800">The web form nobody saw until Monday</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">The average business takes about 42 hours to answer an inquiry. The first company to respond wins about 78% of the time.</p>
+</div>
+<div class="card" style="display: flex; flex-direction: column; gap: 10px">
+<svg class="ico" viewBox="0 0 24 24" style="stroke: #C2410C" aria-hidden="true"><path d="M14 3H6v18h12V7z"></path><path d="M14 3v4h4"></path><path d="M9 13h6M9 17h4"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 800">The estimate nobody followed up on</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">You drove out, measured and sent the quote. Nobody called back, so the customer or client went with whoever did.</p>
+</div>
+<div class="card" style="display: flex; flex-direction: column; gap: 10px">
+<svg class="ico" viewBox="0 0 24 24" style="stroke: #C2410C" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><path d="M3 20a6 6 0 0 1 12 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M15.5 14.5A5 5 0 0 1 21 20"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 800">Years of customers you never talk to</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">Every system you installed needs service. Every roof you replaced has neighbors. It's your cheapest revenue, and it's sitting untouched.</p>
+</div>
+<div class="card" style="display: flex; flex-direction: column; gap: 10px">
+<svg class="ico" viewBox="0 0 24 24" style="stroke: #C2410C" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 800">No reviews, no referrals</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">Happy customers would leave five stars and send their friends. Nobody asks them.</p>
+</div>
+<div class="card" style="display: flex; flex-direction: column; gap: 10px">
+<svg class="ico" viewBox="0 0 24 24" style="stroke: #C2410C" aria-hidden="true"><path d="M12 3v18"></path><path d="M16 7.5C15 6 13.6 5.5 12 5.5c-2.2 0-4 1.1-4 3s1.8 2.6 4 3 4 1.2 4 3.1-1.8 3-4 3c-1.8 0-3.4-.7-4.3-2.1"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 800">Money earned but not collected</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">Invoices age while you chase them between jobs. Automated collections reportedly cut days-to-payment by 20–30%.</p>
+</div>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; max-width: 760px">And underneath it all: <strong>everything runs through you.</strong> Pricing, scheduling and "how do we handle this?" all wait on the owner.</p>
+</div>
+</section>
+
+<section id="how-it-works" style="padding: 88px 0 40px">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 1 1 520px; min-width: 0">
+<div data-idle="brain">
+<div class="wb" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.2cqw">
+<div class="mk" style="font-size: 6.4cqw; text-align: center">Build the Brain</div>
+<svg viewBox="0 0 200 12" style="width: 36%; height: 2cqw" aria-hidden="true"><path d="M4 8 C 50 2, 120 12, 196 5" fill="none" stroke="#C2410C" stroke-width="4" stroke-linecap="round"></path></svg>
+<button class="play" style="background: #C2410C" data-play-btn="brain" aria-label="Play the video: Build the Brain"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z" fill="#FFFFFF"></path></svg></button>
+<div style="font-size: max(13px, 1.7cqw); color: #4B5563">Press play · under a minute, narrated by Kevin</div>
+</div>
+</div>
+<div data-slot="brain"></div><template data-play="brain">
+<div>
+<div class="wb on" role="img" aria-label="Animated whiteboard: what's in the owner's head moves into a Company Brain holding pricing rules, job SOPs, who does what and call scripts. The office manager asks the Brain and gets the owner's answer.">
+<svg class="ab" viewBox="0 0 160 90" preserveAspectRatio="none" style="left: 0; top: 0; width: 100%; height: 100%" aria-hidden="true">
+<path class="ln" pathLength="1" d="M103 33 L111 33 M108 30.5 L111 33 L108 35.5" style="animation-delay: 13.0s"></path>
+<path class="ln" pathLength="1" d="M52 22 Q 82 0 111 14" style="animation-delay: 32.93s"></path>
+</svg>
+<div class="ab d" style="left: 3%; top: 14%; width: 29%; animation: pop .6s ease-out 5.75s forwards, fadeout .5s linear 28.28s forwards"><div class="mk" style="font-size: 3cqw">You, on a roof</div><div class="mk" style="font-size: 2.2cqw; color: #C2410C">ring… ring… ring…</div></div>
+<div class="hd d" style="left: 36%; top: 12%; width: 28%; height: 49.8%; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .6cqw; animation-delay: 0.0s">
+<div class="mk" style="font-size: 3.6cqw">Your head</div>
+<div class="mk" style="font-size: 1.9cqw; color: #4B5563; text-align: center">pricing · SOPs<br>who does what</div>
+</div>
+<div class="ab mk d" style="left: 33%; top: 9%; font-size: 4.4cqw; color: #C2410C; animation-delay: 7.2s">?</div>
+<div class="ab mk d" style="left: 63%; top: 12%; font-size: 4.4cqw; color: #C2410C; animation-delay: 7.92s">?</div>
+<div class="ab mk d" style="left: 61%; top: 54%; font-size: 4.4cqw; color: #C2410C; animation-delay: 8.65s">?</div>
+<div class="hd d" style="left: 70%; top: 10%; width: 27%; height: 62%; padding: 1.6cqw; display: flex; flex-direction: column; gap: 1cqw; animation-delay: 13.0s">
+<div class="mk" style="font-size: 3.2cqw; color: #C2410C">Company Brain</div>
+<div class="d" style="font-size: 1.9cqw; animation-delay: 15.14s">■ Pricing rules</div>
+<div class="d" style="font-size: 1.9cqw; animation-delay: 18.36s">■ Job SOPs</div>
+<div class="d" style="font-size: 1.9cqw; animation-delay: 21.57s">■ Who does what</div>
+<div class="d" style="font-size: 1.9cqw; animation-delay: 24.28s">■ Scripts in your voice</div>
+</div>
+<div class="ab d" style="left: 70%; top: 75%; width: 27%; text-align: center; font-size: 1.7cqw; color: #4B5563; animation-delay: 25.42s">private · yours · always on</div>
+<div class="hd d" style="left: 3%; top: 14%; width: 29%; padding: 1.3cqw; animation-delay: 29.42s">
+<div style="font-size: 1.5cqw; color: #4B5563">Office manager</div>
+<div class="mk" style="font-size: 2.7cqw">How do we price a 3-zone mini-split?</div>
+</div>
+<div class="hd d" style="left: 3%; top: 46%; width: 29%; padding: 1.3cqw; border-color: #C2410C; animation-delay: 36.44s">
+<div style="font-size: 1.5cqw; color: #4B5563">Brain</div>
+<div class="mk" style="font-size: 2.7cqw">Here's your pricing rule and the quote template.</div>
+</div>
+<div class="ab" style="left: 50%; top: 82%; transform: translateX(-50%) rotate(-2deg)">
+<div class="d mk" style="border: max(2px, .35cqw) solid #C2410C; color: #C2410C; border-radius: 1cqw; padding: .6cqw 2cqw; font-size: 3.4cqw; white-space: nowrap; animation-delay: 41.12s">Your team asks the Brain, not you</div>
+</div>
+</div>
+<div class="caps" aria-live="polite">
+<div class="cap" style="animation-delay: 0.0s; animation-duration: 5.75s">Right now, the way your business runs lives in one place: your head.</div>
+<div class="cap" style="animation-delay: 5.75s; animation-duration: 7.25s">So every question waits on you, even when you're up on the roof.</div>
+<div class="cap" style="animation-delay: 13.0s; animation-duration: 10.71s">In 30 days, we move it into a Company Brain: your pricing, your rules, your job SOPs, who does what, and your scripts.</div>
+<div class="cap" style="animation-delay: 23.71s; animation-duration: 5.71s">It's private, it's yours, and your whole team can ask it questions.</div>
+<div class="cap" style="animation-delay: 29.42s; animation-duration: 11.7s">Your office manager stops bringing you every question. They ask the Brain first and get the answer in your words.</div>
+<div class="cap last" style="animation-delay: 41.12s; animation-duration: 12.99s">Fewer calls to the owner, and a business that runs the way you want it run. It also standardizes the business, so it's easier to train people and easier to sell.</div>
+</div>
+<div class="bar"><div class="prog" style="background: #C2410C; animation-duration: 54.11s"></div></div>
+<div style="display: flex; gap: 10px; margin-top: 12px">
+<button class="ghost" data-play-btn="brain">Replay</button>
+<button class="ghost" data-close>Close</button>
+<button class="ghost" data-sound aria-pressed="true">Sound: on</button>
+</div>
+</div>
+</template>
+</div>
+<div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p class="mk" style="margin: 0; font-size: 26px; color: #C2410C">Phase 1 · Days 1–30</p>
+<h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">Your Company Brain.<br><span style="color: #0E5A3A">Your team asks it, not you.</span></h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.55">We get what's in your head and your crew's heads into one private AI system your office can ask.</p>
+<ul style="margin: 0; padding-left: 20px; font-size: 17px; line-height: 1.7">
+<li><strong>Pricing and estimating rules:</strong> how you quote, what you never discount, when to upsell</li>
+<li><strong>Job SOPs:</strong> service calls, installs, warranty claims, callbacks</li>
+<li><strong>Who does what:</strong> dispatch, office, techs, who approves what</li>
+<li><strong>What we say:</strong> call scripts, texts and emails in your voice</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section style="padding: 40px 0 88px">
+<div class="wrap" style="display: flex; flex-wrap: wrap-reverse; gap: 48px; align-items: center">
+<div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p class="mk" style="margin: 0; font-size: 26px; color: #C2410C">Phase 2 · Days 31–90</p>
+<h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">Your Operating System.<br><span style="color: #0E5A3A">It runs while you work.</span></h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.55">Systems that read from your Brain, run on their own and report back to you. We build your most expensive leak first, then work down the list.</p>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5">
+<div><strong>AI receptionist + missed-call text-back:</strong> every call answered, 24/7, with emergencies routed to you</div>
+<div><strong>Instant lead responder:</strong> every form and message answered in under a minute</div>
+<div><strong>Estimate follow-up:</strong> more quotes turned into signed jobs</div>
+<div><strong>Database reactivation:</strong> past customers booking maintenance and repeat work</div>
+<div><strong>Review and referral asks:</strong> after every job, automatically</div>
+<div><strong>Invoice reminders:</strong> paid sooner, with no awkward calls</div>
+<div><strong>Monday owner brief:</strong> one page of calls, leads, quotes and cash</div>
+</div>
+</div>
+<div style="flex: 1 1 520px; min-width: 0">
+<div data-idle="os">
+<div class="wb" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.2cqw">
+<div class="mk" style="font-size: 6.4cqw; text-align: center">Then the OS runs on it</div>
+<svg viewBox="0 0 200 12" style="width: 44%; height: 2cqw" aria-hidden="true"><path d="M4 8 C 50 2, 120 12, 196 5" fill="none" stroke="#C2410C" stroke-width="4" stroke-linecap="round"></path></svg>
+<button class="play" style="background: #C2410C" data-play-btn="os" aria-label="Play the video: Then the OS runs on it"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z" fill="#FFFFFF"></path></svg></button>
+<div style="font-size: max(13px, 1.7cqw); color: #4B5563">Press play · under a minute, narrated by Kevin</div>
+</div>
+</div>
+<div data-slot="os"></div><template data-play="os">
+<div>
+<div class="wb on" role="img" aria-label="Animated whiteboard: the Brain sits in the center with seven systems around it: receptionist, lead responder, quote chaser, reactivation, reviews and referrals, collections and the Monday brief.">
+<svg class="ab" viewBox="0 0 160 90" preserveAspectRatio="none" style="left: 0; top: 0; width: 100%; height: 100%" aria-hidden="true">
+<path class="ln" pathLength="1" d="M80 44.6 L24 14.2" style="animation-delay: 5.48s"></path>
+<path class="ln" pathLength="1" d="M80 44.6 L80 8.8" style="animation-delay: 7.91s"></path>
+<path class="ln" pathLength="1" d="M80 44.6 L136 14.2" style="animation-delay: 11.59s"></path>
+<path class="ln" pathLength="1" d="M80 44.6 L139.2 43.9" style="animation-delay: 15.45s"></path>
+<path class="ln" pathLength="1" d="M80 44.6 L129.6 70" style="animation-delay: 21.48s"></path>
+<path class="ln" pathLength="1" d="M80 44.6 L30.4 70" style="animation-delay: 24.4s"></path>
+<path class="ln" pathLength="1" d="M80 44.6 L20.8 43.9" style="animation-delay: 28.6s"></path>
+</svg>
+<div class="hd d" style="left: 43%; top: 37%; width: 14%; height: 24.9%; border-radius: 50%; border-color: #C2410C; display: flex; align-items: center; justify-content: center; animation-delay: 0.0s"><div class="mk" style="font-size: 3.6cqw; color: #C2410C">Brain</div></div>
+<div class="hd d" style="left: 4%; top: 10%; width: 22%; padding: 1cqw; animation-delay: 5.71s"><div class="mk" style="font-size: 2.6cqw">Receptionist</div><div style="font-size: 1.4cqw">every call answered</div></div>
+<div class="hd d" style="left: 39%; top: 4%; width: 22%; padding: 1cqw; animation-delay: 8.16s"><div class="mk" style="font-size: 2.6cqw">Lead responder</div><div style="font-size: 1.4cqw">forms answered in a minute</div></div>
+<div class="hd d" style="left: 74%; top: 10%; width: 22%; padding: 1cqw; animation-delay: 11.83s"><div class="mk" style="font-size: 2.6cqw">Quote chaser</div><div style="font-size: 1.4cqw">every estimate followed up</div></div>
+<div class="hd d" style="left: 76%; top: 43%; width: 22%; padding: 1cqw; animation-delay: 15.85s"><div class="mk" style="font-size: 2.6cqw">Reactivation</div><div style="font-size: 1.4cqw">past customers come back</div></div>
+<div class="hd d" style="left: 70%; top: 72%; width: 22%; padding: 1cqw; animation-delay: 21.88s"><div class="mk" style="font-size: 2.6cqw">Reviews &amp; referrals</div><div style="font-size: 1.4cqw">asked after every job</div></div>
+<div class="hd d" style="left: 8%; top: 72%; width: 22%; padding: 1cqw; animation-delay: 24.68s"><div class="mk" style="font-size: 2.6cqw">Collections</div><div style="font-size: 1.4cqw">invoices paid sooner</div></div>
+<div class="hd d" style="left: 2%; top: 43%; width: 22%; padding: 1cqw; animation-delay: 28.88s"><div class="mk" style="font-size: 2.6cqw">Monday brief</div><div style="font-size: 1.4cqw">one page of your numbers</div></div>
+<div class="ab" style="left: 50%; top: 84%; transform: translateX(-50%) rotate(-2deg)">
+<div class="d mk" style="border: max(2px, .35cqw) solid #C2410C; color: #C2410C; border-radius: 1cqw; padding: .5cqw 1.6cqw; font-size: 2.8cqw; white-space: nowrap; background: #FFFFFF; animation-delay: 34.21s">90 days → $500/mo</div>
+</div>
+</div>
+<div class="caps" aria-live="polite">
+<div class="cap" style="animation-delay: 0.0s; animation-duration: 5.71s">Once the Brain is built, we build the systems that run on it, not on you.</div>
+<div class="cap" style="animation-delay: 5.71s; animation-duration: 6.12s">An AI receptionist answers every call, and a lead responder answers every web form in under a minute.</div>
+<div class="cap" style="animation-delay: 11.83s; animation-duration: 10.05s">A quote chaser follows up every estimate. Database reactivation brings past customers back.</div>
+<div class="cap" style="animation-delay: 21.88s; animation-duration: 7.0s">Every finished job triggers a review or referral ask. Invoice reminders get you paid sooner.</div>
+<div class="cap" style="animation-delay: 28.88s; animation-duration: 5.33s">And every Monday, one page shows you who called, who's a new lead, your quotes and your cash.</div>
+<div class="cap last" style="animation-delay: 34.21s; animation-duration: 8.8s">All done in 90 days. Then $500 a month keeps it running smoothly.</div>
+</div>
+<div class="bar"><div class="prog" style="background: #C2410C; animation-duration: 43.01s"></div></div>
+<div style="display: flex; gap: 10px; margin-top: 12px">
+<button class="ghost" data-play-btn="os">Replay</button>
+<button class="ghost" data-close>Close</button>
+<button class="ghost" data-sound aria-pressed="true">Sound: on</button>
+</div>
+</div>
+</template>
+</div>
+</div>
+</section>
+
+<section style="padding: 80px 0; background: #FFFFFF; border-top: 1px solid #D4D9D3; border-bottom: 1px solid #D4D9D3">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p class="mk" style="margin: 0; font-size: 26px; color: #C2410C">Your Business Brain in a Box</p>
+<h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">Done in 90 days.<br><span style="color: #0E5A3A">Then it just runs.</span></h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+<div class="card" style="display: flex; flex-direction: column; gap: 8px; border-top: 6px solid #0E5A3A">
+<div style="font-size: 14px; font-weight: 700; color: #0E5A3A; letter-spacing: .06em; text-transform: uppercase">Days 1–30</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 800">Build the Brain</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">About 4 hours of your time in interviews. We write the SOPs, pricing rules and scripts, and you review them.</p>
+</div>
+<div class="card" style="display: flex; flex-direction: column; gap: 8px; border-top: 6px solid #0E5A3A">
+<div style="font-size: 14px; font-weight: 700; color: #0E5A3A; letter-spacing: .06em; text-transform: uppercase">Days 31–90</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 800">Build the OS</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">We plug your leaks in order of cost, test each one live and train your office to use them.</p>
+</div>
+<div class="card" style="display: flex; flex-direction: column; gap: 8px; border-top: 6px solid #C2410C">
+<div style="font-size: 14px; font-weight: 700; color: #4B5563; letter-spacing: .06em; text-transform: uppercase">Day 90 onward</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 800">$500/month keeps it running</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55">Monitoring, fixes, Brain updates and your Monday brief. You own everything we build.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 88px 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<p class="mk" style="margin: 0; font-size: 26px; color: #C2410C">Investment</p>
+<h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">Pay for the heavy lifting once.<br><span style="color: #0E5A3A">Then $500 a month keeps it running.</span></h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.55">Founding-client pricing is open to the first 10 Hudson Valley companies only.</p>
+</div>
+<div style="overflow-x: auto; background: #FFFFFF; border: 1px solid #D4D9D3; border-radius: 14px">
+<table class="ptable">
+<thead><tr><th scope="col">Package</th><th scope="col">Standard</th><th scope="col">Founding client</th></tr></thead>
+<tbody>
+<tr><td><strong>Speed Test</strong></td><td>Free</td><td>Free</td></tr>
+<tr><td><strong>Revenue Leak Audit</strong><br><span style="color: #4B5563; font-size: 15px">Two weeks, one-page Leak Report</span></td><td>$1,500, credited to your build</td><td>Included</td></tr>
+<tr><td><strong>Phase 1: Company Brain</strong></td><td>$7,500</td><td><strong style="color: #C2410C">$5,000</strong></td></tr>
+<tr><td><strong>Phase 2: Operating System</strong></td><td>From $12,500</td><td><strong style="color: #C2410C">From $9,000</strong></td></tr>
+<tr><td><strong>Maintenance</strong><br><span style="color: #4B5563; font-size: 15px">From day 90</span></td><td>$1,000/month</td><td>$500/month</td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #4B5563; max-width: 820px">Founding clients agree to a short case study with real before-and-after numbers, a testimonial, and introductions to three owners they respect. Phone and AI software subscriptions are billed to you at cost.</p>
+</div>
+</section>
+
+<section id="speed-test" style="padding: 88px 0; background: #0E5A3A; color: #FFFFFF">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p class="mk" style="margin: 0; font-size: 26px; color: #FDBA74">Step one is free</p>
+<h2 style="margin: 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">See your first leak<br>before we hang up.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.55">We fill out your website form, call after hours and send a text, then show you exactly what a customer or client experienced. You get the results on a 20-minute call.</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.55">Rather just talk? Call Kevin directly at <a href="tel:+15182567205" style="color: #FDBA74; font-weight: 700">518-256-7205</a>.</p>
+</div>
+<form name="speed-test" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="speedForm" style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; color: #1B2A3A; border-radius: 14px; padding: 28px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+<input type="hidden" name="form-name" value="speed-test"><p hidden><label>Leave this empty<input name="bot-field"></label></p>
+<label class="field">Business name<input type="text" name="business" required autocomplete="organization"></label>
+<label class="field">Website<input type="url" name="website" placeholder="https://"></label>
+<label class="field">Business phone<input type="tel" name="phone" required autocomplete="tel"></label>
+<label class="field">Your name<input type="text" name="name" required autocomplete="name"></label>
+<label class="field">Best time to call<input type="text" name="best-time" placeholder="e.g. weekdays after 4pm"></label>
+<button type="submit" class="btn" style="background: #C2410C; width: 100%">Get my free Speed Test</button>
+<p id="formMsg" role="status" aria-live="polite" style="margin: 0; font-size: 15px; line-height: 1.5"></p>
+</form>
+</div>
+</section>
+
+<footer style="padding: 36px 0 48px">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 14px; font-size: 14px; line-height: 1.6; color: #4B5563">
+<div style="font-size: 16px; color: #1B2A3A"><strong>Roi Digital Consulting LLC</strong> · Where your ROI comes first · Kevin Mullaney · <a href="tel:+15182567205">518-256-7205</a></div>
+<div><a href="practices/">For practices</a></div>
+<div>Figures: 62% of calls missed is an industry estimate (<a href="https://www.schedulingkit.com/hub/business-growth/missed-calls-revenue-loss">SchedulingKit</a>). The 42-hour average response and 78% first-responder win rate come from the <a href="https://close.com/blog/test">Close 2026 speed-to-lead benchmark</a>. The 20–30% faster payment figure comes from <a href="https://stealthagents.com/research/ai-accounts-receivable-automation-statistics-2026">Stealth Agents, citing the Hackett Group</a>.</div>
+</div>
+</footer>
+
+</div>
+<script>
+(function () {
+  var SCRIPTS = {
+  leaks: [
+    "You pay real money to make the phone ring: trucks, signs, Google, referrals.",
+    "Then the leaks start. Most calls go unanswered while you're on a job.",
+    "Web leads wait almost two days for a reply. The first company to answer wins about 78% of the time.",
+    "Estimates go out and nobody follows up. Past customers never hear from you again.",
+    "Happy customers are never even asked for reviews. Invoices sit while you chase them by hand.",
+    "We find every leak in your business and plug it. It all starts with a free Speed Test. It doesn't cost anything, and the leaks could be costing you tens of thousands."
+  ],
+  brain: [
+    "Right now, the way your business runs lives in one place: your head.",
+    "So every question waits on you, even when you're up on the roof.",
+    "In 30 days, we move it into a Company Brain: your pricing, your rules, your job SOPs, who does what, and your scripts.",
+    "It's private, it's yours, and your whole team can ask it questions.",
+    "Your office manager stops bringing you every question. They ask the Brain first and get the answer in your words.",
+    "Fewer calls to the owner, and a business that runs the way you want it run. It also standardizes the business, so it's easier to train people and easier to sell."
+  ],
+  os: [
+    "Once the Brain is built, we build the systems that run on it, not on you.",
+    "An AI receptionist answers every call, and a lead responder answers every web form in under a minute.",
+    "A quote chaser follows up every estimate. Database reactivation brings past customers back.",
+    "Every finished job triggers a review or referral ask. Invoice reminders get you paid sooner.",
+    "And every Monday, one page shows you who called, who's a new lead, your quotes and your cash.",
+    "All done in 90 days. Then $500 a month keeps it running smoothly."
+  ]
+    };
+  var AT = {"leaks": [0.0, 6.04, 12.5, 20.42, 25.42, 32.83], "brain": [0.0, 5.75, 13.0, 23.71, 29.42, 41.12], "os": [0.0, 5.71, 11.83, 21.88, 28.88, 34.21]};
+  var TRACKS = { leaks: 'audio/leaks.mp3', brain: 'audio/brain.mp3', os: 'audio/os.mp3' };
+  var muted = false, playing = null, audio = null, timers = [];
+
+  function synth() { try { return window.speechSynthesis || null; } catch (e) { return null; } }
+  function say(text) {
+    var s = synth(); if (!s) return;
+    try { var u = new SpeechSynthesisUtterance(text); u.lang = 'en-US'; u.rate = 1.02; s.speak(u); } catch (e) {}
+  }
+  function stopVoice() {
+    timers.forEach(clearTimeout); timers = [];
+    if (audio) { try { audio.pause(); } catch (e) {} audio = null; }
+    var s = synth(); if (s) { try { s.cancel(); } catch (e) {} }
+  }
+  function narrateTTS(id) {
+    (SCRIPTS[id] || []).forEach(function (line, i) {
+      if (i === 0) say(line);
+      else timers.push(setTimeout(function () { say(line); }, Math.round((AT[id][i] || i * 8) * 1000) + 150));
+    });
+  }
+  function narrate(id) {
+    var a = new Audio(TRACKS[id]), fallen = false;
+    var fallback = function () { if (fallen || audio !== a) return; fallen = true; audio = null; narrateTTS(id); };
+    audio = a; a.onerror = fallback;
+    try { var p = a.play(); if (p && p.catch) p.catch(fallback); } catch (e) { fallback(); }
+  }
+  function show(id) {
+    document.querySelectorAll('[data-idle]').forEach(function (el) { el.hidden = el.dataset.idle === id; });
+    document.querySelectorAll('[data-slot]').forEach(function (slot) {
+      slot.innerHTML = '';
+      if (slot.dataset.slot === id) {
+        var tpl = document.querySelector('template[data-play="' + id + '"]');
+        slot.appendChild(tpl.content.cloneNode(true));
+      }
+    });
+    syncSound();
+  }
+  function play(id) { stopVoice(); playing = id; show(id); if (!muted) narrate(id); }
+  function close() { stopVoice(); playing = null; show(null); }
+  function syncSound() {
+    document.querySelectorAll('[data-sound]').forEach(function (b) {
+      b.textContent = muted ? 'Sound: off' : 'Sound: on';
+      b.setAttribute('aria-pressed', muted ? 'false' : 'true');
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-play-btn],[data-close],[data-sound]');
+    if (!t) return;
+    if (t.hasAttribute('data-play-btn')) play(t.getAttribute('data-play-btn'));
+    else if (t.hasAttribute('data-close')) close();
+    else { muted = !muted; if (muted) stopVoice(); syncSound(); }
+  });
+
+  // Speed Test form -> Netlify Forms
+  var form = document.getElementById('speedForm'), msg = document.getElementById('formMsg');
+  if (form) form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var data = new URLSearchParams(new FormData(form)).toString();
+    msg.textContent = 'Sending…';
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        form.reset();
+        msg.textContent = "Got it. Kevin will run your Speed Test and call you with the results.";
+      })
+      .catch(function () { msg.textContent = "That didn't send. Call Kevin directly at 518-256-7205."; });
+  });
+})();
+</script>
+</body>
+</html>

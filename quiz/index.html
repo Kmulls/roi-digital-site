@@ -1,0 +1,599 @@
+<title>Blueprint Assessment</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap">
+
+<style>
+:root {
+  --bg: #070E1B;
+  --bg-card: #111F38;
+  --bg-card-hover: #162848;
+  --fg: #E4EAF3;
+  --fg-muted: #8BA0BE;
+  --fg-dim: #4E6585;
+  --accent: #38BDF8;
+  --accent-dim: rgba(56,189,248,0.10);
+  --gold: #D4A056;
+  --gold-hover: #E0B570;
+  --gold-dim: rgba(212,160,86,0.12);
+  --red: #EF6B6B;
+  --green: #4ADE80;
+  --border: #1A2E50;
+  --grid-line: rgba(56,189,248,0.04);
+  --option-bg: #0E1A30;
+  --option-hover: #142240;
+  --option-selected: rgba(56,189,248,0.12);
+  --option-border-selected: var(--accent);
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #F2F5FA; --bg-card: #FFFFFF; --bg-card-hover: #F0F4FA;
+    --fg: #0B1A2E; --fg-muted: #4A6180; --fg-dim: #8494A7;
+    --accent: #0C7ABF; --accent-dim: rgba(12,122,191,0.07);
+    --gold: #9E7520; --gold-hover: #8A6518; --gold-dim: rgba(158,117,32,0.08);
+    --red: #C0392B; --green: #16A34A;
+    --border: #D4DCE8; --grid-line: rgba(12,122,191,0.03);
+    --option-bg: #F7F9FC; --option-hover: #EEF2F9;
+    --option-selected: rgba(12,122,191,0.08);
+    --option-border-selected: var(--accent);
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #F2F5FA; --bg-card: #FFFFFF; --bg-card-hover: #F0F4FA;
+  --fg: #0B1A2E; --fg-muted: #4A6180; --fg-dim: #8494A7;
+  --accent: #0C7ABF; --accent-dim: rgba(12,122,191,0.07);
+  --gold: #9E7520; --gold-hover: #8A6518; --gold-dim: rgba(158,117,32,0.08);
+  --red: #C0392B; --green: #16A34A;
+  --border: #D4DCE8; --grid-line: rgba(12,122,191,0.03);
+  --option-bg: #F7F9FC; --option-hover: #EEF2F9;
+  --option-selected: rgba(12,122,191,0.08);
+  --option-border-selected: var(--accent);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: 'Nunito Sans', system-ui, sans-serif;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  min-height: 100%;
+}
+html { height: 100%; }
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 100; background: var(--bg);
+}
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: -1;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 40px 40px; pointer-events: none;
+}
+h1, h2, h3, .display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.04em; line-height: 1.1; }
+.serif { font-family: 'Lora', Georgia, serif; }
+a { color: var(--accent); }
+
+.quiz-wrap {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-block: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - 6rem);
+}
+
+/* — Progress — */
+.progress-bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+.progress-label {
+  font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.15em;
+  color: var(--fg-dim); margin-bottom: 0.5rem;
+  text-align: right;
+}
+
+/* — Screens — */
+.screen { display: none; }
+.screen.active { display: flex; flex-direction: column; }
+
+/* — Intro screen — */
+.intro { text-align: center; flex: 1; justify-content: center; }
+.intro h1 {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  margin: 0;
+}
+.intro h1 em { font-style: normal; color: var(--gold); }
+.intro p {
+  font-family: 'Lora', serif;
+  color: var(--fg-muted);
+  font-size: 1.05rem;
+  margin: 1rem auto 0;
+  max-width: 42ch;
+  line-height: 1.7;
+}
+.intro-meta {
+  font-size: 0.8rem; color: var(--fg-dim);
+  margin-top: 0.75rem;
+}
+
+/* — Questions — */
+.q-screen { flex: 1; }
+.q-text {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.15rem, 3vw, 1.4rem);
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+.q-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.8rem;
+  color: var(--fg-dim);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.option {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: var(--option-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  text-align: left;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--fg);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+.option:hover { background: var(--option-hover); border-color: var(--fg-dim); }
+.option.selected {
+  background: var(--option-selected);
+  border-color: var(--option-border-selected);
+}
+
+/* — Email capture — */
+.capture { flex: 1; }
+.capture h2 { font-size: 1.8rem; margin: 0 0 0.5rem; }
+.capture p { color: var(--fg-muted); margin: 0 0 1.5rem; font-size: 0.95rem; }
+.field-group {
+  display: flex; flex-direction: column; gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.field label {
+  display: block; font-size: 0.75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--fg-dim); margin-bottom: 0.3rem;
+}
+.field input {
+  width: 100%; padding: 0.75rem 1rem;
+  background: var(--option-bg); border: 1.5px solid var(--border);
+  border-radius: 6px; font-family: inherit; font-size: 0.95rem;
+  color: var(--fg); outline: none;
+}
+.field input:focus { border-color: var(--accent); }
+.field input::placeholder { color: var(--fg-dim); }
+.birth-fields__removed {
+  display: none; margin-top: 0.5rem;
+  padding: 1rem; background: var(--accent-dim);
+  border-radius: 8px;
+}
+.birth-fields.visible { display: block; }
+.birth-fields p {
+  font-size: 0.82rem; color: var(--fg-muted);
+  margin: 0 0 0.75rem; line-height: 1.5;
+}
+.birth-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
+}
+@media (max-width: 400px) { .birth-row { grid-template-columns: 1fr; } }
+.consent-row {
+  display: flex; gap: 0.5rem; align-items: flex-start;
+  margin-top: 0.75rem; font-size: 0.78rem; color: var(--fg-dim);
+}
+.consent-row input { margin-top: 0.2rem; flex-shrink: 0; }
+
+/* — Buttons — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 0.8rem 2rem; border-radius: 6px;
+  font-family: 'Nunito Sans', sans-serif; font-size: 0.9rem;
+  font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;
+  border: none; cursor: pointer; transition: background 0.15s, transform 0.1s;
+  text-decoration: none;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: var(--gold); color: #0B1A2E; }
+.btn-primary:hover { background: var(--gold-hover); }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-secondary { background: transparent; color: var(--fg-muted); border: 1px solid var(--border); }
+.btn-secondary:hover { border-color: var(--fg-muted); color: var(--fg); }
+.btn-full { width: 100%; }
+.btn-group { display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+
+/* — Results — */
+.result { flex: 1; }
+.result-badge {
+  display: inline-block; font-size: 0.7rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.15em;
+  background: var(--gold); color: #0B1A2E;
+  padding: 0.3em 0.8em; border-radius: 4px; margin-bottom: 1rem;
+}
+.result h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin: 0 0 0.25rem; }
+.result-quote {
+  font-family: 'Lora', serif; font-style: italic;
+  font-size: 1.1rem; color: var(--gold);
+  margin: 0 0 1.5rem;
+}
+.result-section { margin-bottom: 1.5rem; }
+.result-section h3 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.15em;
+  color: var(--accent); margin: 0 0 0.4rem;
+}
+.result-section p {
+  font-size: 0.95rem; color: var(--fg-muted);
+  margin: 0; line-height: 1.7;
+}
+.result-move {
+  padding: 1rem 1.25rem;
+  background: var(--gold-dim);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 1.5rem;
+}
+.result-move h3 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.15em;
+  color: var(--gold); margin: 0 0 0.3rem;
+}
+.result-move p {
+  font-size: 0.92rem; color: var(--fg); margin: 0; line-height: 1.6;
+}
+.result-reveal {
+  padding: 1rem 1.25rem;
+  background: var(--accent-dim);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 1.5rem;
+}
+.result-reveal h3 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.15em;
+  color: var(--accent); margin: 0 0 0.3rem;
+}
+.result-reveal p {
+  font-size: 0.92rem; color: var(--fg-muted); margin: 0; line-height: 1.6;
+}
+.result-cta {
+  text-align: center; padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+}
+.result-cta p {
+  font-size: 0.85rem; color: var(--fg-dim);
+  margin: 0.75rem 0 0;
+}
+</style>
+
+<div class="quiz-wrap">
+  <!-- INTRO -->
+  <div class="screen active" id="intro-screen">
+    <div class="intro">
+      <h1>Why does growing your business feel <em>harder</em> than it should?</h1>
+      <p>Find your Build Stage &mdash; the hidden bottleneck in how you&rsquo;re scaling &mdash; and the first move to fix it.</p>
+      <div class="intro-meta">8 questions &middot; 2 minutes</div>
+      <div class="btn-group" style="justify-content:center; margin-top:2rem;">
+        <button class="btn btn-primary" onclick="startQuiz()">Show Me My Blueprint</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUESTION SCREENS (generated by JS) -->
+  <div class="screen" id="question-screen">
+    <div class="progress-label" id="progress-label">Question 1 of 8</div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="q-screen">
+      <div class="q-num" id="q-num"></div>
+      <div class="q-text" id="q-text"></div>
+      <div class="options" id="options-container"></div>
+    </div>
+  </div>
+
+  <!-- EMAIL CAPTURE -->
+  <div class="screen" id="capture-screen">
+    <div class="capture">
+      <h2>Your Build Stage Is Ready</h2>
+      <p>Where should we send your results?</p>
+      <div class="field-group">
+        <div class="field">
+          <label for="cap-name">First Name</label>
+          <input type="text" id="cap-name" placeholder="Your first name" autocomplete="given-name">
+        </div>
+        <div class="field">
+          <label for="cap-email">Email</label>
+          <input type="email" id="cap-email" placeholder="you@example.com" autocomplete="email">
+        </div>
+      </div>
+      <div class="consent-row">
+        <input type="checkbox" id="cap-consent" checked>
+        <label for="cap-consent">I agree to receive my results and follow-up emails.</label>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-primary btn-full" id="cap-submit" onclick="showResults()">See My Results</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="screen" id="result-screen">
+    <div class="result" id="result-container"></div>
+  </div>
+</div>
+
+<script>
+var QUESTIONS = [
+  {
+    num: "Question 1",
+    text: "Where’s your business right now?",
+    options: [
+      { label: "Just me, doing everything", tag: "solo" },
+      { label: "Me plus a contractor or two", tag: "first_crew" },
+      { label: "A small team, 3 to 15", tag: "growing" },
+      { label: "Established, but stuck", tag: "stalled" }
+    ]
+  },
+  {
+    num: "Question 2",
+    text: "What’s the biggest thing slowing your growth?",
+    options: [
+      { label: "I’m the bottleneck — everything runs through me", tag: "overloaded" },
+      { label: "I don’t know who to hire, or hires haven’t worked", tag: "missing" },
+      { label: "My team isn’t in sync", tag: "crossed" },
+      { label: "I’m working hard but not getting the results", tag: "wrong_door" }
+    ]
+  },
+  {
+    num: "Question 3",
+    text: "How do you usually make big business decisions?",
+    options: [
+      { label: "Quickly, on instinct", tag: "gut" },
+      { label: "I think it through, sometimes for too long", tag: "mind" },
+      { label: "I talk it out with people I trust", tag: "sound" },
+      { label: "Honestly, I second-guess myself a lot", tag: "uncertain" }
+    ]
+  },
+  {
+    num: "Question 4",
+    text: "By the end of a typical work week, you feel…",
+    options: [
+      { label: "Satisfied but tired", tag: "satisfied" },
+      { label: "Frustrated, like I’m spinning my wheels", tag: "frustrated" },
+      { label: "Unseen, like my work isn’t recognized", tag: "unseen" },
+      { label: "Drained, like I absorbed everyone’s stress", tag: "drained" }
+    ]
+  },
+  {
+    num: "Question 5",
+    text: "What drains you most?",
+    options: [
+      { label: "Starting things and chasing people", tag: "initiating" },
+      { label: "Grinding through work I don’t love", tag: "grinding" },
+      { label: "Being interrupted or controlled", tag: "controlled" },
+      { label: "Other people’s moods and energy", tag: "absorbing" }
+    ]
+  },
+  {
+    num: "Question 6",
+    text: "If you could hand off one thing tomorrow, what would it be?",
+    options: [
+      { label: "Admin and operations", tag: "ops" },
+      { label: "Sales and follow-up", tag: "sales" },
+      { label: "Content and marketing", tag: "content" },
+      { label: "Managing people", tag: "people" }
+    ]
+  },
+  {
+    num: "Question 7",
+    text: "What would success in the next 90 days look like?",
+    options: [
+      { label: "Hire my first right person", tag: "hire" },
+      { label: "Get my team working together smoothly", tag: "team" },
+      { label: "Grow revenue without burning out", tag: "grow" },
+      { label: "Get clear on what I’m really building", tag: "clarity" }
+    ]
+  },
+  {
+    num: "Question 8",
+    text: "How open are you to using frameworks like Human Design to tune how you build your business?",
+    options: [
+      { label: "Very open — I already use it or something similar", tag: "hot" },
+      { label: "Curious, tell me more", tag: "warm" },
+      { label: "I prefer practical tools only", tag: "practical" }
+    ]
+  }
+];
+
+var RESULTS = {
+  overloaded: {
+    name: "Overloaded Foundation",
+    quote: "“Everything runs through me.”",
+    mirror: "You’re the sales team, the delivery team, and the help desk. Revenue is real, but it stops the moment you do. Time off feels like a risk. You can’t remember the last full weekend you didn’t check your phone.",
+    cost: "Your growth ceiling is your own stamina. Most owners at this stage are one bad month from burnout — and the business has no plan for that.",
+    reframe: "The business was built on your energy, but not on how your energy actually works. Some people are wired for a long, steady burn. Others are built for sharp bursts and recovery. Running the wrong pattern drains you twice as fast. It’s not a discipline problem — it’s a design problem.",
+    move: "For one week, mark every task green (gives energy) or red (drains it). Your first hire or system is the biggest red block. Don’t start with what you’re bad at — start with what costs you the most energy.",
+    hot_reveal: "Your type tells us your energy pattern. You may be a steady engine that needs the right fuel, a burst-and-rest system that needs recovery built in, or a guide who was never meant to run the engine alone. Your front door — how you’re designed to make decisions — changes which tasks should stay with you and which need to go.",
+    warm_reveal: "There’s a reason some weeks leave you energized and others leave you empty — even when the workload is the same. It’s not random. How your energy works is part of your wiring, and once you see it, you can build around it instead of against it.",
+    sprint: "Weeks 1–3 of the sprint build your Founder Operating Manual: when to work, how to decide, and what to delegate first."
+  },
+  missing: {
+    name: "Missing Rooms",
+    quote: "“I don’t know who to hire.”",
+    mirror: "You know you need help, but every hire so far either felt like a clone of you or didn’t stick. You keep doing the tasks you hate because explaining them takes longer than just doing them yourself.",
+    cost: "A wrong first hire costs months of salary, onboarding time, and — worst of all — the confidence to try again. Most founders at this stage default to doing everything solo, which keeps the ceiling exactly where it is.",
+    reframe: "Most founders hire for what they’re good at, because that’s what they can judge in an interview. The real gaps are the rooms you don’t have built in — the work you avoid, not the work you understand.",
+    move: "List the three tasks you avoid longest. That’s your first role — described by the work and the energy it needs, not by a job title. “I need someone who loves the follow-up I dread” is a better brief than “I need an executive assistant.”",
+    hot_reveal: "Your blueprint shows which rooms are yours and which are open — where you naturally carry energy and where you’re borrowing it from others. The open rooms point straight at the role you need to fill first.",
+    warm_reveal: "There’s a pattern to which tasks drain you and which ones don’t. It’s not about discipline or preference — some work genuinely isn’t built for your wiring. Once you see the pattern, hiring gets a lot clearer.",
+    sprint: "Weeks 3–5 of the sprint build your Crew Plan: a first-hire role profile written by work and energy, plus a delegation list that actually sticks."
+  },
+  crossed: {
+    name: "Crossed Wires",
+    quote: "“My team isn’t in sync.”",
+    mirror: "Good people, tense meetings. Decisions stall or get re-made. Someone’s always frustrated and you can’t put your finger on exactly why. You end up as the referee more than the leader.",
+    cost: "Slow decisions, quiet turnover, and you stuck in the middle. The team has talent, but the energy is off — and that’s costing you speed, trust, and good people.",
+    reframe: "People amplify each other’s energy without knowing it. One person’s open room picks up another person’s stress and broadcasts it louder. Nobody’s wrong — the wiring is crossed. Clear the wiring and the same team moves faster.",
+    move: "Write down who owns which three decisions. Wherever two names show up for the same decision, you’ve found a crossed wire. That’s where the tension lives.",
+    hot_reveal: "Your type shows how you’re designed to lead, and your front door shows how you make your best decisions. When the team sees each other’s designs — who’s a steady engine, who’s a guide, who’s a launcher — the friction starts to make sense.",
+    warm_reveal: "There’s a reason some team combinations click and others grind, even when everyone’s talented and trying. It’s not personality — it’s how energy moves between people. Mapping it changes the conversation.",
+    sprint: "Weeks 4–5 of the sprint run The Build: a team exercise that maps the crew, clarifies decision rights, and gives every person a one-page operating card."
+  },
+  wrong_door: {
+    name: "Wrong Front Door",
+    quote: "“Working hard, wrong results.”",
+    mirror: "You’re doing what the playbooks say: posting, cold outreach, launches. The effort is high, the return is thin, and it feels like pushing a door that should open but won’t.",
+    cost: "Months spent on strategies that were designed for someone else’s wiring. And a growing sense that something’s wrong with you — when really, something’s wrong with the door.",
+    reframe: "Only about one in ten people is built to cold-start everything. Most do better responding to demand, or being invited in for their expertise. Your marketing should go in through your front door, not someone else’s.",
+    move: "Look at your last five best clients or customers. How did each one start: you chased them, they came to you, or someone referred them? That pattern is your front door. Build from there.",
+    hot_reveal: "Your type tells us how you’re designed to engage with the world: are you a launcher, a responder, or a guide who wins through recognition? Your strategy and your front door reshape your entire sales process — channels, cadence, and content.",
+    warm_reveal: "There’s a reason some business approaches feel natural and others feel like pushing uphill. It’s not about effort or skill — it’s about fit. The way you’re wired to sell, show up, and close isn’t one-size-fits-all.",
+    sprint: "Weeks 5–6 of the sprint rebuild your marketing and load your business brain: offer framing, channels, and content rhythm — all matched to your front door."
+  }
+};
+
+var answers = [];
+var currentQ = 0;
+
+function startQuiz() {
+  document.getElementById('intro-screen').classList.remove('active');
+  document.getElementById('question-screen').classList.add('active');
+  showQuestion(0);
+}
+
+function showQuestion(idx) {
+  currentQ = idx;
+  var q = QUESTIONS[idx];
+  var total = QUESTIONS.length;
+  document.getElementById('progress-label').textContent = 'Question ' + (idx + 1) + ' of ' + total;
+  document.getElementById('progress-fill').style.width = ((idx + 1) / total * 100) + '%';
+  document.getElementById('q-num').textContent = q.num.toUpperCase();
+  document.getElementById('q-text').textContent = q.text;
+
+  var container = document.getElementById('options-container');
+  container.innerHTML = '';
+  q.options.forEach(function(opt, i) {
+    var btn = document.createElement('button');
+    btn.className = 'option';
+    btn.textContent = opt.label;
+    if (answers[idx] && answers[idx].tag === opt.tag) {
+      btn.classList.add('selected');
+    }
+    btn.addEventListener('click', function() {
+      answers[idx] = opt;
+      container.querySelectorAll('.option').forEach(function(b) { b.classList.remove('selected'); });
+      btn.classList.add('selected');
+      setTimeout(function() {
+        if (idx < total - 1) {
+          showQuestion(idx + 1);
+        } else {
+          goToCapture();
+        }
+      }, 250);
+    });
+    container.appendChild(btn);
+  });
+}
+
+function goToCapture() {
+  document.getElementById('question-screen').classList.remove('active');
+  document.getElementById('capture-screen').classList.add('active');
+
+}
+
+function getStage() {
+  if (!answers[1]) return 'overloaded';
+  var map = { overloaded: 'overloaded', missing: 'missing', crossed: 'crossed', wrong_door: 'wrong_door' };
+  return map[answers[1].tag] || 'overloaded';
+}
+
+function getTrack() {
+  if (!answers[7]) return 'practical';
+  return answers[7].tag;
+}
+
+function showResults() {
+  var name = document.getElementById('cap-name').value.trim();
+  var email = document.getElementById('cap-email').value.trim();
+  if (!name || !email) {
+    document.getElementById('cap-name').style.borderColor = name ? '' : 'var(--red)';
+    document.getElementById('cap-email').style.borderColor = email ? '' : 'var(--red)';
+    return;
+  }
+
+  var stage = getStage();
+  var track = getTrack();
+  var r = RESULTS[stage];
+
+  var html = '';
+  html += '<div class="result-badge">Your Build Stage</div>';
+  html += '<h2>' + r.name + '</h2>';
+  html += '<div class="result-quote">' + r.quote + '</div>';
+
+  html += '<div class="result-section"><h3>The Mirror</h3><p>' + r.mirror + '</p></div>';
+  html += '<div class="result-section"><h3>What It’s Costing You</h3><p>' + r.cost + '</p></div>';
+  html += '<div class="result-section"><h3>The Reframe</h3><p>' + r.reframe + '</p></div>';
+
+  html += '<div class="result-move"><h3>Your First Move (Free)</h3><p>' + r.move + '</p></div>';
+
+  if (track === 'hot') {
+    html += '<div class="result-reveal"><h3>Your Blueprint Preview</h3><p>' + r.hot_reveal + '</p></div>';
+  } else if (track === 'warm') {
+    html += '<div class="result-reveal"><h3>There’s a Reason</h3><p>' + r.warm_reveal + '</p></div>';
+  }
+
+  html += '<div class="result-section"><h3>What the Sprint Focuses On</h3><p>' + r.sprint + '</p></div>';
+
+  html += '<div class="result-cta">';
+  if (track === 'hot') {
+    html += '<a href="#book" class="btn btn-primary btn-full">Walk Through Your Full Blueprint</a>';
+  } else if (track === 'warm') {
+    html += '<a href="#book" class="btn btn-primary btn-full">See How You’re Built to Scale</a>';
+  } else {
+    html += '<a href="#book" class="btn btn-primary btn-full">Map Your Next 45 Days</a>';
+  }
+  html += '<p>Book a free 20-minute Blueprint Call with Kevin.</p>';
+  html += '</div>';
+
+  document.getElementById('result-container').innerHTML = html;
+  document.getElementById('capture-screen').classList.remove('active');
+  document.getElementById('result-screen').classList.add('active');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
