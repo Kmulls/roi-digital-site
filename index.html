@@ -836,6 +836,71 @@ svg.icon { flex-shrink: 0; }
 
 .faq-item.open .faq-a { display: block; }
 
+/* — Value Proposition — */
+.value-prop {
+  max-width: 640px;
+  margin: 2.5rem auto 2rem;
+  padding: 2rem 2.25rem;
+  border-left: 3px solid var(--gold);
+  background: var(--gold-dim);
+  border-radius: 0 6px 6px 0;
+}
+
+.value-prop p {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--fg);
+  margin: 0;
+}
+
+.value-prop-kicker {
+  margin-top: 1rem !important;
+  font-weight: 600;
+  color: var(--gold) !important;
+  font-size: 1.05rem !important;
+}
+
+/* — Book Section — */
+.book-section {
+  text-align: center;
+  padding-block: 4rem;
+  border-top: 1px solid var(--border);
+}
+
+.book-card {
+  max-width: 540px;
+  margin: 2rem auto 0;
+  padding: 2.5rem 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.book-card .book-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.book-card .book-detail {
+  font-family: 'Lora', serif;
+  color: var(--fg-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.book-card .btn { width: 100%; justify-content: center; margin-bottom: 0.75rem; }
+
+.book-or {
+  color: var(--fg-dim);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+.book-or a { color: var(--accent); }
+
 /* — Final CTA — */
 .final-cta {
   text-align: center;
@@ -908,8 +973,8 @@ svg.icon { flex-shrink: 0; }
   <div class="nav-inner">
     <div class="nav-brand">ROI <span>Digital</span></div>
     <div class="nav-actions">
-      <a href="tel:+1" class="nav-link hide-mobile">Call Kevin</a>
-      <a href="#quiz" class="btn btn-primary btn-small">Take the Assessment</a>
+      <a href="#book" class="nav-link hide-mobile">Book a Call</a>
+      <a href="#book" class="btn btn-primary btn-small">Talk to Kevin</a>
     </div>
   </div>
 </nav>
@@ -955,8 +1020,8 @@ svg.icon { flex-shrink: 0; }
   </div>
 
   <div class="hero-ctas">
-    <a href="#quiz" class="btn btn-primary">Take the 2-Minute Assessment</a>
-    <a href="#how" class="btn btn-secondary">How It Works</a>
+    <a href="#book" class="btn btn-primary">Book a Free Blueprint Call</a>
+    <a href="quiz/" class="btn btn-secondary">Take the 2-Minute Assessment</a>
   </div>
 </header>
 
@@ -1032,6 +1097,11 @@ svg.icon { flex-shrink: 0; }
       <div class="door-pct">~20% of founders</div>
       <p>Built to see what others miss &mdash; the inefficiency, the misalignment, the better path. But their energy isn&rsquo;t designed for cold outreach. Their front door opens by invitation: when the right person recognizes their insight and asks for it.</p>
     </div>
+  </div>
+
+  <div class="value-prop">
+    <p>Most founders build their brand by copying what worked for someone else &mdash; then wonder why it feels like a grind. Your blueprint shows you the rooms you actually live in: how you make decisions, where your energy renews, and what drains you before lunch. When your brand matches your wiring, you stop performing and start operating. Marketing gets simpler because you&rsquo;re saying what&rsquo;s true instead of what sounds right. Clients show up easier because the signal is clear. And the return isn&rsquo;t just revenue &mdash; it&rsquo;s time back, energy you keep, relationships that don&rsquo;t cost you, and a business that runs the way you actually think.</p>
+    <p class="value-prop-kicker">That&rsquo;s the ROI most people don&rsquo;t measure until they feel the difference.</p>
   </div>
 
   <p class="problem-pullquote">&ldquo;Push the wrong door and you burn out.<br>Find yours and the work starts to flow.&rdquo;</p>
@@ -1305,7 +1375,7 @@ svg.icon { flex-shrink: 0; }
   </div>
 
   <div style="text-align:center; margin-top:1.5rem;">
-    <a href="#quiz" class="btn btn-secondary">Find Your Build Stage First</a>
+    <a href="#book" class="btn btn-secondary">Talk to Kevin About Your Blueprint</a>
   </div>
 </section>
 
@@ -1556,7 +1626,7 @@ svg.icon { flex-shrink: 0; }
       <li>90-day post-sprint review</li>
     </ul>
 
-    <a href="#quiz" class="btn btn-primary" style="width:100%; justify-content:center;">Take the Assessment to Start</a>
+    <a href="#book" class="btn btn-primary" style="width:100%; justify-content:center;">Book Your Blueprint Call</a>
 
     <div class="pricing-terms">Pay in full or 50% deposit up front, balance at completion. Stripe only.<br>Full refund available before Session 2.</div>
   </div>
@@ -1597,6 +1667,22 @@ svg.icon { flex-shrink: 0; }
   </div>
 </section>
 
+<!-- =========== BOOK A CALL =========== -->
+<section class="section book-section wrap" id="book">
+  <div class="section-center">
+    <div class="section-eyebrow">Free &middot; 20 Minutes</div>
+    <h2 class="section-title">Book a Blueprint Call</h2>
+    <p class="section-subtitle">Tell Kevin what you&rsquo;re building. He&rsquo;ll tell you which rooms are running your show &mdash; and which ones are running you.</p>
+  </div>
+
+  <div class="book-card">
+    <div class="book-name">Kevin Mullaney</div>
+    <div class="book-detail">Blueprint Sprint &middot; ROI Digital Consulting</div>
+    <a href="tel:+1" class="btn btn-primary">Call Kevin Now</a>
+    <p class="book-or">Not ready to talk? <a href="quiz/">Take the 2-minute assessment</a> and we&rsquo;ll follow up.</p>
+  </div>
+</section>
+
 <!-- =========== FINAL CTA =========== -->
 <section class="final-cta wrap">
   <div class="final-cta-svg">
@@ -1613,10 +1699,10 @@ svg.icon { flex-shrink: 0; }
     </svg>
   </div>
   <h2>Stop renovating with<br>someone else&rsquo;s <em>plans.</em></h2>
-  <p>Your building has original plans. Your business gets rebuilt around them.</p>
+  <p>Your building has original plans. Let&rsquo;s read them together.</p>
   <div class="hero-ctas">
-    <a href="#quiz" class="btn btn-primary">Take the 2-Minute Assessment</a>
-    <a href="tel:+1" class="btn btn-secondary">Call Kevin</a>
+    <a href="#book" class="btn btn-primary">Book a Free Blueprint Call</a>
+    <a href="quiz/" class="btn btn-secondary">Take the Assessment First</a>
   </div>
 </section>
 
